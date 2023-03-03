@@ -1,0 +1,6 @@
+com.example.chat
+com.example.chat.config
+com.example.chat.controller
+com.example.chat.db_model
+com.example.chat.model
+com.example.chat.repository

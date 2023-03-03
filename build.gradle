@@ -1,0 +1,34 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//Зависимость для JSON парсера
+	implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+	//Зависимость для Hibernate
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//Зависимость для контролеров
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//Зависимость PostgreSQL драйвера
+	runtimeOnly 'org.postgresql:postgresql'
+	//Зависимость веб-сокетов
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//Зависимости lombok (генерация data классов)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
